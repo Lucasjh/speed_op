@@ -9,7 +9,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.9.pre3'
-gem 'cancancan'
 gem 'json'
 gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
@@ -23,6 +22,8 @@ gem 'mailcatcher'
 gem 'mail_form'
 gem 'simple_form'
 gem 'whenever', :require => false
+
+gem 'cancancan', '~> 1.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

@@ -5,9 +5,11 @@
 <hr>
 
 <div class="page-header">
+  <% if can? :create, Site %>
   <%= link_to new_site_path, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>
     New Site
+      <% end %>
   <% end %>
   <h1>Your Sites</h1>
 </div>
@@ -19,9 +21,11 @@
       <th>Name</th>
       <th>URL</th>
       <th>Mobile Speed</th>
-      <th>More</th>
-      <th>Edit</th>
+      <th>Show</th>
+      <% if can? :update, :destroy, Site %>
+    <th>Edit</th>
       <th>Delete</th>
+        <% end %>
     </tr>
     </thead>
 
@@ -31,9 +35,11 @@
       <td><%= site.url %></td>
       <td><%= site.current_mobile_score %></td>
       <td><%= link_to '', site, class: 'btn btn-primary glyphicon glyphicon-search' %></td>
-      <td><%= link_to '', edit_site_path(site), class: 'btn btn-primary glyphicon glyphicon-pencil' %></td>
+      <% if can? :update, :destroy, Site %>
+      <td><%= link_to '', edit_site_path(site), class: 'btn btn-primary glyphicon glyphicon-edit' %></td>
       <td><%= link_to '', site, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary glyphicon glyphicon-trash' %></td>
     <% end %>
+      <% end %>
 
     </tbody>
   </table>

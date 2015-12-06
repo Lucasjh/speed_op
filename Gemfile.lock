@@ -372,7 +372,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-generators
   byebug
-  cancancan
+  cancancan (~> 1.10)
   capybara
   coffee-rails (~> 4.1.0)
   dotenv-rails
